@@ -6,7 +6,11 @@ import MailboxDetails from './components/MailboxDetails';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-  
+ 
+    const [mailboxes, setMailboxes] = useState([]);
+    const addBox = (newMailbox) => {
+    setMailboxes((prevMailboxes) => [...prevMailboxes, newMailbox]);
+    }
   
   return (
     <Router>
@@ -22,7 +26,7 @@ const App = () => {
         />
         <Route 
           path="/new-mailbox" 
-          element={<MailboxForm onCreateMailbox={createMailbox} />} 
+          element={<MailboxForm onCreateMailbox={addBox} />} 
         />
         <Route 
           path="/mailboxes/:mailboxId" 
