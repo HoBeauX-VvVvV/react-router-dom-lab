@@ -7,10 +7,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
  
-    const [mailboxes, setMailboxes] = useState([]);
-    const addBox = (newMailbox) => {
-    setMailboxes((prevMailboxes) => [...prevMailboxes, newMailbox]);
-    }
+  const [mailboxes, setMailboxes] = useState([]);
+
+  const addBox = (newMailbox) => {
+    const _id = mailboxes.length; 
+    const mailboxWithId = { ...newMailbox, _id };
+    setMailboxes((prevMailboxes) => [...prevMailboxes, mailboxWithId]);
+  };
   
   return (
     <Router>

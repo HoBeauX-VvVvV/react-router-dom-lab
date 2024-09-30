@@ -9,7 +9,7 @@ const MailboxDetails = ({ mailboxes }) => {
   }
 
   return (
-    <div>
+    <div className="mail-box">
       <h2>Mailbox Details</h2>
       <p>Box No: {mailbox._id}</p>
       <p>Name: {mailbox.name}</p>
