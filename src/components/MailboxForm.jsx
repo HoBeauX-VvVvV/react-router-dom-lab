@@ -3,17 +3,16 @@ import { useNavigate } from 'react-router-dom';
 
 const MailboxForm = ({ onCreateMailbox }) => {
   const [name, setName] = useState('');
-  const [boxSize, setBoxSize] = useState('Small'); // Default to 'Small'
-  const navigate = useNavigate(); // To handle redirection
+  const [boxSize, setBoxSize] = useState('Small');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name) {
-      // Create a new mailbox object and pass it to the onCreateMailbox function
       onCreateMailbox({ name, boxSize });
-      setName(''); // Reset the form
-      setBoxSize('Small'); // Reset to default value
-      navigate('/mailboxes'); // Redirect to Mailboxes page after submission
+      setName(''); 
+      setBoxSize('Small'); 
+      navigate('/mailboxes'); 
     }
   };
 
